@@ -1,10 +1,12 @@
 # strata_task_jspsych
 
 Use of the jsPsych for academic publication requires the following citation:
+
 de Leeuw, J. R. (2015). jsPsych: A JavaScript library for creating behavioral experiments in a web browser.
 Behavior Research Methods, 47(1), 1-12. doi:10.3758/s13428-014-0458-y.
 
 Use of the STRATA task for academic publication requires the following citation:
+
 Barulli, D. (2018). Strategic Flexibility in Fluid Reasoning:
 Raven's-Type Matrices Reveal Strategy Shifting and Strategy Sets for Visuospatial and Logical Items.
 Manuscript in preparation.
@@ -12,6 +14,7 @@ Manuscript in preparation.
 For questions on this task please contact the author at: djb2168@columbia.edu.
 
 Strategic Flexibility Task
+
 MIT License
 
 Copyright (c) 2018 Daniel Barulli
