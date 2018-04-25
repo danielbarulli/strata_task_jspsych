@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>STRATA</title>
+    <script src="../jspsych.js"></script>
+    <script src="../plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="../plugins/jspsych-image-keyboard-response.js"></script>
+    <script src="../plugins/jspsych-instructions.js"></script>
+    <link rel="stylesheet" href="../css/jspsych.css"></link>
+  </head>
+  <body></body>
+  <script>
+
+var welcome = {
+    type: "html-keyboard-response",
+    stimulus: "Welcome to the experiment. Press any key to begin."
+  };
+
+  var training = {
+      type: 'instructions',
+      pages: [
+          '<p>In this experiment, you will be asked to complete a pattern by using some reasoning strategy.<br />Each pattern can be completed using one of the provided answers labeled 1 to 8.<br /> You should work as quickly as possible since you will only have a fixed time to respond..<br /></p>',
+          '<p>First we will try some practice trials.<br /> On the following pages, try to select the best square that completes the missing shape on the bottom right corner of the matrix</p>',
+          '<p>Which shape from 1 to 8 best completes the pattern? Click next once you have an answer in mind.</p> <img src="img/OR_P.png"></img>',
+          '<img src="img/OR_P.png"></img> <p>Here the third shape in each row is a combination of the first two shapes.If the shape is featured in the first cell or the second cell, it is included in the third. So the missing shape should include both the first shape and the second shape in the last row.Hence, 3 is the correct answer..</p>',
+          '</p>Which shape from 1 to 8 best completes the pattern? Click next once you have an answer in mind.</p> <img src="img/XOR_P.png"></img>',
+          '<img src="img/XOR_P.png"></img> <p>Here the third shape in each row contains only what is unique from the other two shapes. If the shape is featured in the first cell or the second cell, but NOT BOTH, it is included in the third. Since the first two shapes do not share any common elements, the third shape will be their combination. Hence, 3 is the correct answer.</p>',
+          '<p>Which shape from 1 to 8 best completes the pattern? Click next once you have an answer in mind.</p> <img src="img/SO_P.png"></img>',
+          '<img src="img/SO_P.png"></img> <p>Here the third shape in each row contains a rotated version of the first shape. Since the third row contains an oval being gradually rotated, the missing shape will include an oval. There are three ovals in the answer set, but only one of them is the same size as the other ovals. Hence, 5 is the correct answer.</p>',
+          '<p>Which shape from 1 to 8 best completes the pattern? Click next once you have an answer in mind.</p> <img src="img/SN_P.png"></img>',
+          '<img src="img/SN_P.png"></img> <p>Here the third shape in each row contains the same shape as the first two shapes. However, the shape changes number (one more) and size (slightly smaller) across the row. Since the third row has rectangles, we are looking for 4 small rectangles in the answer set. Hence, 6 is the correct answer.</p>',
+          '<p>Please use the navigation arrows below to go back if you still do not understand a particular item.<br /> There will be 4 sets of items, with a break in between each set.<br /> You will have 30 seconds to complete each trial, but you should try to answer as quickly as possible.<br /> Please answer using the keys 1 through 8 on your keyboard.</p>',
+          '<p> When you are ready to start the real test, press next.</p>',
+      ],
+      show_clickable_nav: true
+    };
+
+var block_1 = {
+    timeline: [
+        {
+            type: 'html-keyboard-response',
+            stimulus: '<div style="font-size:60px;">+</div>',
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 750
+        },
+        {
+            type: 'image-keyboard-response',
+            stimulus: jsPsych.timelineVariable('stimulus'),
+            choices: ['1', '2', '3', '4', '5', '6', '7', '8'],
+            trial_duration: 30000
+          }
+    ],
+    timeline_variables: [
+      { stimulus: "img/OR_1.png"},
+      { stimulus: "img/OR_2.png"},
+      { stimulus: "img/XOR_1.png"},
+      { stimulus: "img/XOR_2.png"},
+      { stimulus: "img/OR_3.png"},
+      { stimulus: "img/OR_4.png"},
+      { stimulus: "img/XOR_3.png"},
+      { stimulus: "img/XOR_4.png"},
+      { stimulus: "img/OR_5.png"},
+      { stimulus: "img/OR_6.png"},
+      { stimulus: "img/XOR_5.png"},
+      { stimulus: "img/XOR_6.png"},
+      { stimulus: "img/OR_7.png"},
+      { stimulus: "img/OR_8.png"},
+      { stimulus: "img/XOR_7.png"},
+      { stimulus: "img/XOR_8.png"},
+      { stimulus: "img/OR_9.png"},
+      { stimulus: "img/OR_10.png"},
+      { stimulus: "img/XOR_9.png"},
+      { stimulus: "img/XOR_10.png"}
+    ],
+  };
+
+var block_2 = {
+    timeline: [
+        {
+            type: 'html-keyboard-response',
+            stimulus: '<div style="font-size:60px;">+</div>',
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 750
+        },
+        {
+            type: 'image-keyboard-response',
+            stimulus: jsPsych.timelineVariable('stimulus'),
+            choices: ['1', '2', '3', '4', '5', '6', '7', '8'],
+            trial_duration: 30000
+          }
+    ],
+    timeline_variables: [
+      { stimulus: "img/A1C3.png"},
+      { stimulus: "img/A1C5.png"},
+      { stimulus: "img/OR_11.png"},
+      { stimulus: "img/OR_12.png"},
+      { stimulus: "img/A2C3.png"},
+      { stimulus: "img/A2C4.png"},
+      { stimulus: "img/OR_13.png"},
+      { stimulus: "img/OR_14.png"},
+      { stimulus: "img/A2C5.png"},
+      { stimulus: "img/A4C1.png"},
+      { stimulus: "img/OR_15.png"},
+      { stimulus: "img/OR_16.png"},
+      { stimulus: "img/A4C5.png"},
+      { stimulus: "img/SO_1.png"},
+      { stimulus: "img/OR_17.png"},
+      { stimulus: "img/OR_18.png"},
+      { stimulus: "img/SO_2.png"},
+      { stimulus: "img/SO_3.png"},
+      { stimulus: "img/OR_19.png"},
+      { stimulus: "img/OR_20.png"}
+    ],
+};
+
+var block_3 = {
+    timeline: [
+        {
+            type: 'html-keyboard-response',
+            stimulus: '<div style="font-size:60px;">+</div>',
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 750
+        },
+        {
+            type: 'image-keyboard-response',
+            stimulus: jsPsych.timelineVariable('stimulus'),
+            choices: ['1', '2', '3', '4', '5', '6', '7', '8'],
+            trial_duration: 30000
+          }
+    ],
+    timeline_variables: [
+      { stimulus: "img/SO_4.png"},
+      { stimulus: "img/SO_5.png"},
+      { stimulus: "img/D1E3.png"},
+      { stimulus: "img/D2E3.png"},
+      { stimulus: "img/SO_6.png"},
+      { stimulus: "img/SO_7.png"},
+      { stimulus: "img/D3E5.png"},
+      { stimulus: "img/D4E5.png"},
+      { stimulus: "img/SO_8.png"},
+      { stimulus: "img/SO_9.png"},
+      { stimulus: "img/D5E1.png"},
+      { stimulus: "img/D5E2.png"},
+      { stimulus: "img/SO_10.png"},
+      { stimulus: "img/SO_11.png"},
+      { stimulus: "img/D5E4.png"},
+      { stimulus: "img/SN_1.png"},
+      { stimulus: "img/SO_12.png"},
+      { stimulus: "img/SO_13.png"},
+      { stimulus: "img/SN_2.png"},
+      { stimulus: "img/SN_3.png"}
+    ],
+};
+
+var block_4 = {
+    timeline: [
+        {
+            type: 'html-keyboard-response',
+            stimulus: '<div style="font-size:60px;">+</div>',
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 750
+        },
+        {
+            type: 'image-keyboard-response',
+            stimulus: jsPsych.timelineVariable('stimulus'),
+            choices: ['1', '2', '3', '4', '5', '6', '7', '8'],
+            trial_duration: 30000
+          }
+    ],
+    timeline_variables: [
+      { stimulus: "img/SO_14.png"},
+      { stimulus: "img/SO_15.png"},
+      { stimulus: "img/OR_21.png"},
+      { stimulus: "img/OR_22.png"},
+      { stimulus: "img/SO_16.png"},
+      { stimulus: "img/SO_17.png"},
+      { stimulus: "img/OR_23.png"},
+      { stimulus: "img/OR_24.png"},
+      { stimulus: "img/SO_18.png"},
+      { stimulus: "img/SO_19.png"},
+      { stimulus: "img/OR_25.png"},
+      { stimulus: "img/OR_26.png"},
+      { stimulus: "img/SO_20.png"},
+      { stimulus: "img/SO_21.png"},
+      { stimulus: "img/X_3.png"},
+      { stimulus: "img/X_7.png"},
+      { stimulus: "img/SO_22.png"},
+      { stimulus: "img/SO_23.png"},
+      { stimulus: "img/X_9.png"},
+      { stimulus: "img/X_17.png"}
+    ],
+};
+var rest ={
+    type: 'html-keyboard-response',
+    stimulus: '<p><div style="font-size:30px;"> End of Block.<br /><br /> You will have 1 minute to rest, or press any key to continue when you are ready.</div></p>',
+    trial_duration: 60000
+};
+
+var thankyou = {
+    type: "html-keyboard-response",
+    stimulus: "<p>You have reached the end of the experiment.<br /> Thank you very much for participating!</p>"
+  };
+
+var blocks = jsPsych.randomization.shuffle([block_1, block_2, block_3, block_4]);
+
+var timeline = [welcome, training];
+  for(var i=0; i<blocks.length; i++){
+    timeline.push(blocks[i]);
+    timeline.push(rest);
+  }
+timeline.push(thankyou);
+
+    /* start the experiment */
+    jsPsych.init({
+      timeline: timeline,
+      show_progress_bar: true
+    });
+  </script>
+</html>
