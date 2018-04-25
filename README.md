@@ -9,6 +9,8 @@ Barulli, D. (2018). Strategic Flexibility in Fluid Reasoning:
 Raven's-Type Matrices Reveal Strategy Shifting and Strategy Sets for Visuospatial and Logical Items.
 Manuscript in preparation.
 
+For questions on this task please contact the author at: djb2168@columbia.edu.
+
 Strategic Flexibility Task
 MIT License
 
